@@ -1,21 +1,15 @@
-2017-04-08T16:33:10.121+0800 I CONTROL  [initandlisten] MongoDB starting : pid=90882 port=27017 dbpath=/Users/zhangguo/MyWords 64-bit host=GuodeMacBook-Pro.local
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] db version v3.4.0
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] git version: f4240c60f005be757399042dc12f6addbc3170c1
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2k  26 Jan 2017
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] allocator: system
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] modules: none
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] build environment:
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten]     distarch: x86_64
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-04-08T16:33:10.122+0800 I CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/zhangguo/MyWords" } }
-2017-04-08T16:33:10.122+0800 W -        [initandlisten] Detected unclean shutdown - /Users/zhangguo/MyWords/mongod.lock is not empty.
-2017-04-08T16:33:10.123+0800 I -        [initandlisten] Detected data files in /Users/zhangguo/MyWords created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-04-08T16:33:10.123+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
-2017-04-08T16:33:10.123+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-04-08T16:33:10.822+0800 I CONTROL  [initandlisten] 
-2017-04-08T16:33:10.822+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-04-08T16:33:10.822+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-04-08T16:33:10.822+0800 I CONTROL  [initandlisten] 
-2017-04-08T16:33:10.863+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/zhangguo/MyWords/diagnostic.data'
-2017-04-08T16:33:10.864+0800 I NETWORK  [thread1] waiting for connections on port 27017
-2017-04-08T16:33:11.013+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2017-04-09T00:04:22.709+0800 I CONTROL  [initandlisten] MongoDB starting : pid=5481 port=27017 dbpath=/Users/zhangguo/MyWords 64-bit host=GuodeMacBook-Pro.local
+2017-04-09T00:04:22.709+0800 I CONTROL  [initandlisten] db version v3.4.0
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] git version: f4240c60f005be757399042dc12f6addbc3170c1
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2k  26 Jan 2017
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] allocator: system
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] modules: none
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] build environment:
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/zhangguo/MyWords" } }
+2017-04-09T00:04:22.710+0800 I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to lock file: /Users/zhangguo/MyWords/mongod.lock Resource temporarily unavailable. Is a mongod instance already running?, terminating
+2017-04-09T00:04:22.710+0800 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2017-04-09T00:04:22.710+0800 I NETWORK  [initandlisten] shutdown: going to flush diaglog...
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] now exiting
+2017-04-09T00:04:22.710+0800 I CONTROL  [initandlisten] shutting down with code:100
