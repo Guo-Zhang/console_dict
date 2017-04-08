@@ -1,9 +1,10 @@
 from setuptools import setup
 
+from console_dict import PACKAGE_VERSION
 
 setup(
     name='console_dict',
-    version='0.0.1.dev1',
+    version=PACKAGE_VERSION,
     packages=['console_dict'],
     url='github.com/Guo-Zhang/console_dict',
     license='MIT',
