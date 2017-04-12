@@ -3,6 +3,7 @@
 
 from __future__ import print_function, absolute_import
 
+import time
 import random
 import subprocess
 from optparse import OptionParser
@@ -83,11 +84,8 @@ Input 'stop' if you want to stop.
 
         collection.update_one({'_id': word['_id']}, {"$inc":{'_grasp': status}})
 
-        next = raw_input("next?")
-        if next=='stop':
-            break
-        else:
-            print()
+        print()
+        time.sleep(2)
 
     print("Happy that you are willing to review us. See you next time!")
 
