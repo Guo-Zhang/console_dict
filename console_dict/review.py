@@ -16,7 +16,7 @@ from console_dict.tools import print_word, print_means, play_pron
 PACKAGE_VERSION = '%prog '+PACKAGE_VERSION
 
 
-def cal_status(prompt):
+def cal_status(prompt = ''):
     status = raw_input(prompt)
 
     yes = ['Yes', 'yes', 'Y', 'y', '1']
@@ -53,7 +53,7 @@ Input 'stop' if you want to stop.
         print_word(word)
         play_pron(word, collection=collection)
 
-        train_status = cal_status("Do you know it? ")
+        train_status = cal_status("Do you know it?")
         if train_status == 'del':
             collection.delete_one(word['_id'])
         if train_status == 'stop':
@@ -82,9 +82,16 @@ Input 'stop' if you want to stop.
             words.append(word)
 
         collection.update_one({'_id': word['_id']}, {"$inc":{'_grasp': status}})
-        print()
 
-    print("This is the end. See you next time!")
+        next = raw_input("next?")
+        if next=='stop':
+            break
+        else:
+            print()
+
+
+
+    print("Happy that you are willing to review us. See you next time!")
 
 
 def stats(collection):
