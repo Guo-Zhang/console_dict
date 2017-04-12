@@ -84,9 +84,7 @@ Input 'stop' if you want to stop.
 
         collection.update_one({'_id': word['_id']}, {"$inc":{'_grasp': status}})
 
-        print()
-        if status<1:
-            time.sleep(2)
+        raw_input()
 
     print("Happy that you are willing to review us. See you next time!")
 
