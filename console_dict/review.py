@@ -10,7 +10,7 @@ from optparse import OptionParser
 from pymongo import MongoClient
 
 from console_dict.config import PACKAGE_VERSION, DEFAULT_DATABASE, DEFAULT_COLLECTION, DEFAUTL_PATH, LOG
-from console_dict.tools import print_word, print_means
+from console_dict.tools import print_word, print_means, play_pron
 
 
 PACKAGE_VERSION = '%prog '+PACKAGE_VERSION
@@ -28,6 +28,8 @@ def cal_status(prompt):
         return False
     elif status == 'stop':
         return 'stop'
+    elif status == 'del':
+        return 'del'
     else:
         print("please choose again.")
         return cal_status(prompt)
@@ -49,8 +51,11 @@ Input 'stop' if you want to stop.
     while words:
         word = words.pop(random.randrange(len(words)))
         print_word(word)
+        play_pron(word, collection=collection)
 
         train_status = cal_status("Do you know it? ")
+        if train_status == 'del':
+            collection.delete_one(word['_id'])
         if train_status == 'stop':
             break
 
@@ -62,6 +67,8 @@ Input 'stop' if you want to stop.
 
         if train_status:
             test_status = cal_status("Do you really know it? ")
+            if test_status == 'del':
+                collection.delete_one(word['_id'])
             if test_status == 'stop':
                 break
 
@@ -75,6 +82,7 @@ Input 'stop' if you want to stop.
             words.append(word)
 
         collection.update_one({'_id': word['_id']}, {"$inc":{'_grasp': status}})
+        print()
 
     print("This is the end. See you next time!")
 
@@ -144,7 +152,7 @@ if __name__ == "__main__":
     collection = db[DEFAULT_COLLECTION]
 
     # review words
-    # review_words(collection)
+    review_words(collection)
 
     # stats
     stats(collection)

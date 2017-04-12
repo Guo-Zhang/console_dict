@@ -34,7 +34,7 @@ def search_word(word, collection=None):
             return None
 
     try:
-        print_data(doc)
+        print_data(doc, collection)
         return doc
     except KeyError:
         print('We cannot find the word.')
