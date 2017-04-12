@@ -20,7 +20,7 @@ def cal_status(prompt = ''):
     status = raw_input(prompt)
 
     yes = ['Yes', 'yes', 'Y', 'y', '1']
-    no = ['No', 'no', 'N', 'n', '0']
+    no = ['No', 'no', 'N', 'n', '0','2']
 
     if status in yes:
         return True
@@ -89,8 +89,6 @@ Input 'stop' if you want to stop.
         else:
             print()
 
-
-
     print("Happy that you are willing to review us. See you next time!")
 
 
@@ -105,10 +103,9 @@ def stats(collection):
     score_percentage = score*0.1/total*100.
 
     info ="""
-There are %d words in total in the words list, including %d old words(%0.2f %%) and %d new words(%0.2f %%).
-
+There are %d words in total in the words list,
+including %d old words(%0.2f %%) and %d new words(%0.2f %%).
 At present you have got %d score(%0.2f %%).
-
 Cheer up! Try you best to deal with the problems of new words!
     """%(total, total-new, 100-new_percentage, new, new_percentage, score, score_percentage)
 
