@@ -4,3 +4,4 @@ dist
 .idea
 *.log
 console_dict.log
+*.pyc
