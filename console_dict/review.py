@@ -62,6 +62,7 @@ Input 'stop' if you want to stop.
 
         try:
             print_means(word)
+            play_pron(word, collection=collection)
         except KeyError:
             print('This is not a correct word.')
             collection.delete_one(word['_id'])
@@ -83,8 +84,10 @@ Input 'stop' if you want to stop.
             words.append(word)
 
         collection.update_one({'_id': word['_id']}, {"$inc":{'_grasp': status}})
-
-        raw_input()
+        if status<1:
+            raw_input()
+        else:
+            print()
 
     print("Happy that you are willing to review us. See you next time!")
 
